@@ -1,0 +1,22 @@
+
+
+FUSED LOCATION API
+
+STEPS:
+1- Create an xml file with necessary views.
+2- implementation of google play services in dependencies
+3- MainActivity Class will be implementing ConnectionCallback,LocationListener,
+   onConnectionFailedListener
+4- Create a Google Api Client Builder.
+5- Create FusedLocationProviderClient instance.
+6- Check for Permisssions and ask for them if not given by the user.
+   (Also you need to define these permissions in ManifestFile)
+7- Override all the necessary methods.
+8- Create an instance of LocationCallback and override the onLocationResult method.
+   (LocationCallback instance should be inside OnCreate Method )
+   Inside the onLocationResult method ,for every location present,set the textViews in the Xml
+9- Inside the onLocationChanged method,set the textViews in the Xml for their location.
+10-Override the onResume method and check for the Boolean variable and call a new method,
+   say startLocationUpdates();
+11-In startLocationUpdates method,first check for the permissions and return,after this,
+   call requestLocationUpdates method on fusedLocationProviderClient.
